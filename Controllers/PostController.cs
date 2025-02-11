@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using HikeHub.Models;
 using Microsoft.EntityFrameworkCore;
+using HikeHub.ViewModels;
 
 namespace HikeHub.Controllers
 {
