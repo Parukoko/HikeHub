@@ -1092,19 +1092,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mamoruuko\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mamoruuko\\Documents\\HikeHub\\services\\services.csproj",
+      "projectUniqueName": "D:\\All Code\\kmitl\\y2_s2\\web_app\\project\\HikeHub\\services\\services.csproj",
       "projectName": "services",
-      "projectPath": "C:\\Users\\Mamoruuko\\Documents\\HikeHub\\services\\services.csproj",
-      "packagesPath": "C:\\Users\\Mamoruuko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mamoruuko\\Documents\\HikeHub\\services\\obj\\",
+      "projectPath": "D:\\All Code\\kmitl\\y2_s2\\web_app\\project\\HikeHub\\services\\services.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\All Code\\kmitl\\y2_s2\\web_app\\project\\HikeHub\\services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mamoruuko\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -1178,7 +1178,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
