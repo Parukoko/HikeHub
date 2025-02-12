@@ -1,11 +1,13 @@
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using HikeHub.Models;
 
 namespace HikeHub.ViewModels
 {
+    public class TableViewModel
+    {
+        public List<string> TableNames { get; set; } = new List<string>();
+    }
     public class PostViewModel
     {
         public int PostID { get; set; }
@@ -25,6 +27,7 @@ namespace HikeHub.ViewModels
         [Required(ErrorMessage = "Duration is required")]
         public required int Duration { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public string? Description { get; set; }
 
         [Range(1, int.MaxValue, ErrorMessage = "Max Participants must be at least 1")]
@@ -39,15 +42,13 @@ namespace HikeHub.ViewModels
         [Required(ErrorMessage = "Expiration date must be in the future.")]
         public DateTime ExpiredAt { get; set; }
 
-        // User Details
-        public UserViewModel User { get; set; }
+        public UserViewModel? User { get; set; }
 
-        // Tags for Post
         public List<TagViewModel> Tags { get; set; } = new List<TagViewModel>();
 
         public List<ParticipantViewModel> Participants { get; set; } = new List<ParticipantViewModel>();
 
-        public string PostStatus { get; set; }
+        public Post.Status PostStatus { get; set; }
 
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
@@ -56,30 +57,19 @@ namespace HikeHub.ViewModels
     public class UserViewModel
     {
         public int UserID { get; set; }
-        public string UserName { get; set; }
+        public required string UserName { get; set; }
     }
 
     public class TagViewModel
     {
         public int TagID { get; set; }
-        public string TagName { get; set; }
+        public required string TagName { get; set; }
     }
-
-    // Participant ViewModel for Post
     public class ParticipantViewModel
     {
         public int ParticipantID { get; set; }
         public int UserID { get; set; }
         public int PostID { get; set; }
-    }
-
-    // FutureDate Attribute ViewModel
-    public class FutureDateViewModel
-    {
-        [Required]
-        [DataType(DataType.Date)]
-        [FutureDate(ErrorMessage = "Expiration date must be in the future.")]
-        public DateTime ExpiredAt { get; set; }
     }
     public class CreatePostViewModel
     {
@@ -113,4 +103,11 @@ namespace HikeHub.ViewModels
     {
         public List<PostViewModel> Posts { get; set; } = new List<PostViewModel>();
     }
+    public class ChangeStatusViewModel
+  {
+        public int PostId { get; set; }
+
+        public Post.Status PostStatus { get; set; } = Post.Status.Closed;
+    }
+
 }

@@ -40,7 +40,7 @@ namespace HikeHub.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Posts",
+                name: "Post",
                 columns: table => new
                 {
                     PostID = table.Column<int>(type: "integer", nullable: false)
@@ -86,7 +86,7 @@ namespace HikeHub.Migrations
                     table.ForeignKey(
                         name: "FK_Participants_Posts_PostID",
                         column: x => x.PostID,
-                        principalTable: "Posts",
+                        principalTable: "Post",
                         principalColumn: "PostID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -106,7 +106,7 @@ namespace HikeHub.Migrations
                     table.ForeignKey(
                         name: "FK_Tag_Posts_PostID",
                         column: x => x.PostID,
-                        principalTable: "Posts",
+                        principalTable: "Post",
                         principalColumn: "PostID");
                 });
 
@@ -117,7 +117,7 @@ namespace HikeHub.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_Posts_UserID",
-                table: "Posts",
+                table: "Post",
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
@@ -139,7 +139,7 @@ namespace HikeHub.Migrations
                 name: "Tag");
 
             migrationBuilder.DropTable(
-                name: "Posts");
+                name: "Post");
 
             migrationBuilder.DropTable(
                 name: "User");

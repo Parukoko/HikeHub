@@ -8,8 +8,11 @@ namespace HikeHub.Models
         public HikeHubDbContext(DbContextOptions<HikeHubDbContext> options) : base(options) { }
 
         public DbSet<Post> Posts { get; set; }
-        public DbSet<Favorite> Favorites { get; set; }
+        public DbSet<Favourite> Favourites { get; set; }
         public DbSet<Participant> Participants { get; set; }
+
+        public DbSet<Notification> Notifications { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

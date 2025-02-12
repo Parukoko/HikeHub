@@ -14,7 +14,6 @@ namespace HikeHub.Services
             _context = context;
         }
 
-        // Method to create a post
         public async Task<Post> CreatePostAsync(Post post)
         {
             _context.Posts.Add(post);
@@ -22,7 +21,6 @@ namespace HikeHub.Services
             return post;
         }
 
-        // Method to get a post by ID
         public async Task<Post> GetPostByIdAsync(int id)
         {
             var post = await _context.Posts
@@ -30,17 +28,36 @@ namespace HikeHub.Services
                 .Include(p => p.TagList)
                 .FirstOrDefaultAsync(p => p.PostID == id);
 
+            if (post == null)
+            {
+                throw new KeyNotFoundException($"Post with ID {id} not found.");
+            }
+
             return post;
         }
 
-        // Method to update a post
+        public List<Post> GetPostsByUsername(string username)
+        {
+            return _context.Posts
+                .Include(p => p.User)
+                .Where(p => p.User != null && p.User.UserName == username)
+                .ToList();
+        }
+
+        public List<Post> GetAllPosts()
+        {
+            return _context.Posts
+                .Include(p => p.User)
+                .Include(p => p.Favourites).ThenInclude(f => f.User)
+                .Include(p => p.TagList)
+                .ToList();
+        }
         public async Task<Post> UpdatePostAsync(int id, Post updatedPost)
         {
             var post = await _context.Posts.FindAsync(id);
             if (post == null)
-                return null;
+                throw new KeyNotFoundException($"Post with ID {id} not found.");
 
-            // Update the properties of the post
             post.Title = updatedPost.Title;
             post.MeetingLocation = updatedPost.MeetingLocation;
             post.DestinationAddress = updatedPost.DestinationAddress;
@@ -56,7 +73,6 @@ namespace HikeHub.Services
             return post;
         }
 
-        // Method to delete a post
         public async Task<bool> DeletePostAsync(int id)
         {
             var post = await _context.Posts.FindAsync(id);
@@ -68,13 +84,13 @@ namespace HikeHub.Services
             return true;
         }
 
-        // Method to get all posts
         public async Task<List<Post>> GetAllPostsAsync()
         {
-            return await _context.Posts
+            var posts = await _context.Posts
                 .Include(p => p.User)
                 .Include(p => p.TagList)
                 .ToListAsync();
+            return posts ?? new List<Post>();
         }
     }
 }

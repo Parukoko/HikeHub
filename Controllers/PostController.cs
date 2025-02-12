@@ -7,14 +7,17 @@ namespace HikeHub.Controllers
 {
     [Route("api/posts")]
     [ApiController]
-    public class PostsController : ControllerBase
+    public class PostController : Controller
     {
         private readonly HikeHubDbContext _context;
+        private readonly ILogger<PostController> _logger;
 
-        public PostsController(HikeHubDbContext context) // ✅ Constructor name fixed
+        public PostController(HikeHubDbContext context, ILogger<PostController> logger)
         {
             _context = context;
+            _logger = logger;
         }
+
 
         [HttpPost("create")]
         public async Task<IActionResult> CreatePost([FromBody] Post post)
@@ -72,19 +75,19 @@ namespace HikeHub.Controllers
             return Ok(post);
         }
 
-        [HttpPost("toggle-favorite/{postId}")]
+        [HttpPost("toggle-favourite/{postId}")]
         public async Task<IActionResult> ToggleFavorite(int postId, [FromBody] int userId)
         {
-            var favorite = await _context.Favorites
+            var favourite = await _context.Favourites
                 .SingleOrDefaultAsync(f => f.UserID == userId && f.PostID == postId);
 
-            if (favorite == null)
-                _context.Favorites.Add(new Favorite { UserID = userId, PostID = postId });
+            if (favourite == null)
+                _context.Favourites.Add(new Favourite { UserID = userId, PostID = postId });
             else
-                _context.Favorites.Remove(favorite);
+                _context.Favourites.Remove(favourite);
 
             await _context.SaveChangesAsync();
-            return Ok(new { message = favorite == null ? "Added to favorites" : "Removed from favorites", postId });
+            return Ok(new { message = favourite == null ? "Added to favorites" : "Removed from favorites", postId });
         }
 
         [HttpPost("join-trip/{postId}")]
