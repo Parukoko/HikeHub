@@ -1,6 +1,45 @@
 @HikeHub_HostAddress = http://localhost:5181
 
-GET {{HikeHub_HostAddress}}/weatherforecast/
-Accept: application/json
+### Register a new user
+POST {{HikeHub_HostAddress}}/User/Register
+Content-Type: application/json
 
-###
+{
+  "UserID": 1,
+  "Name": "John Doe",
+  "UserName": "johndoe",
+  "Age": 30,
+  "Bio": "I love hiking.",
+  "Gender": "Male",
+  "ProfilePicture": "profile.jpg"
+}
+
+### Login a user
+POST {{HikeHub_HostAddress}}/User/Login
+Content-Type: application/json
+
+{
+  "UserName": "johndoe",
+  "Name": "John Doe"
+}
+
+### Update user profile
+PUT {{HikeHub_HostAddress}}/User/UpdateProfile
+Content-Type: application/json
+
+{
+  "UserID": 1,
+  "Name": "John Doe Updated",
+  "UserName": "johndoe",
+  "Age": 31,
+  "Bio": "I love hiking and traveling.",
+  "Gender": "Male",
+  "ProfilePicture": "profile_updated.jpg"
+}
+
+### Follow a user
+POST {{HikeHub_HostAddress}}/User/FollowUser?userId=1&followUserId=2
+
+### Get user profile
+GET {{HikeHub_HostAddress}}/User/Profile?id=1
+Accept: application/json

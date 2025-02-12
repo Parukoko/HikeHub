@@ -1,24 +1,29 @@
+// filepath: /d:/All Code/kmitl/y2_s2/web_app/project/HikeHub/.vscode/launch.json
 {
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "C/C++ Runner: Debug Session",
-      "type": "cppdbg",
+      "name": ".NET Core Launch (web)",
+      "type": "coreclr",
       "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/bin/Debug/net9.0/HikeHub.dll",
       "args": [],
+      "cwd": "${workspaceFolder}",
       "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "c:/Users/Mamoruuko/Documents/HikeHub",
-      "program": "c:/Users/Mamoruuko/Documents/HikeHub/build/Debug/outDebug",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ]
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      },
+      "logging": {
+        "moduleLoad": false
+      }
     }
   ]
 }

@@ -1,0 +1,30 @@
+@model User
+
+<form asp-action="UpdateProfile" method="post">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="Age"></label>
+        <input asp-for="Age" />
+        <span asp-validation-for="Age"></span>
+    </div>
+    <div>
+        <label asp-for="Bio"></label>
+        <input asp-for="Bio" />
+        <span asp-validation-for="Bio"></span>
+    </div>
+    <div>
+        <label asp-for="Gender"></label>
+        <input asp-for="Gender" />
+        <span asp-validation-for="Gender"></span>
+    </div>
+    <div>
+        <label asp-for="ProfilePicture"></label>
+        <input asp-for="ProfilePicture" />
+        <span asp-validation-for="ProfilePicture"></span>
+    </div>
+    <button type="submit">Update Profile</button>
+</form>
