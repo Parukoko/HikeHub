@@ -1,6 +1,2 @@
 /bin/
 /obj/
-
-# Ignore tasks.json and launch.json
-.vscode/tasks.json
-.vscode/launch.json
