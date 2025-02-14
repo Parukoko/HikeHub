@@ -1,0 +1,279 @@
+[33mcommit 198ce2250f418e910127bf0d6d763b2c1cf07046[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mValentine[m[33m)[m
+Author: punnawitskv <punnawit@gmail.com>
+Date:   Sat Feb 15 01:41:36 2025 +0700
+
+    รีจิสได้ วาลิเดทแล้ว
+
+[33mcommit e6f777ebdeae36ada660d132b7298db281920f42[m
+Author: punnawitskv <punnawit@gmail.com>
+Date:   Sat Feb 15 01:38:29 2025 +0700
+
+    user register
+
+[33mcommit d6072d33d44f7da1690c9272cb5a9f36920c6c8a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: a6cd2b4 52836b8
+Author: Thanatchaya Toom-ariya <102163404+Parukoko@users.noreply.github.com>
+Date:   Fri Feb 14 04:14:54 2025 +0700
+
+    Merge pull request #20 from Parukoko:origin/mook
+    
+    add annoucement
+
+[33mcommit 52836b85de795e3165442d50aeada6bf8737c470[m[33m ([m[1;31morigin/origin/mook[m[33m)[m
+Author: Thanatchaya Toom-ariya <thanatchayamook@gmail.com>
+Date:   Fri Feb 14 04:14:06 2025 +0700
+
+    add annoucement
+
+[33mcommit a6cd2b448a7f8b498470c8b45b23a778a440d3f1[m
+Merge: 53b5bd8 f1fa729
+Author: Thanatchaya Toom-ariya <102163404+Parukoko@users.noreply.github.com>
+Date:   Wed Feb 12 18:14:39 2025 +0700
+
+    Merge pull request #17 from Parukoko/origin/mook
+    
+    Origin/mook
+
+[33mcommit f1fa72914170b7df6698a6a0c02dc7d9945ee594[m
+Merge: 3b76979 53b5bd8
+Author: Thanatchaya Toom-ariya <thanatchayamook@gmail.com>
+Date:   Wed Feb 12 18:13:02 2025 +0700
+
+    Merge remote-tracking branch 'origin' into origin/mook
+
+[33mcommit 3b7697974878e5f1205e3959d4f982e39cf42312[m
+Merge: 6220201 cf04177
+Author: Thanatchaya Toom-ariya <thanatchayamook@gmail.com>
+Date:   Wed Feb 12 18:09:13 2025 +0700
+
+    Merge branch 'main' into origin/mook
+
+[33mcommit 62202014260d46595e137810576fc1905fe2c255[m
+Author: Thanatchaya Toom-ariya <thanatchayamook@gmail.com>
+Date:   Wed Feb 12 17:41:10 2025 +0700
+
+    Resolved merge conflicts and cleaned up unnecessary files.
+
+[33mcommit 8dbffaef677f4db6357ac971ab18d51ccb1f40a0[m
+Author: Thanatchaya Toom-ariya <thanatchayamook@gmail.com>
+Date:   Wed Feb 12 17:34:45 2025 +0700
+
+    add favourite
+
+[33mcommit bbb8ac242567f1c8dcccb168d807618f243c2a12[m[33m ([m[1;31morigin/origin/Mook[m[33m)[m
+Author: unknown <thanatchayamook@gmail.com>
+Date:   Tue Feb 11 23:09:08 2025 +0700
+
+    add post
+
+[33mcommit 7a4336e342dd5fe0559ea778a4187f526734858b[m
+Author: unknown <thanatchayamook@gmail.com>
+Date:   Tue Feb 11 19:56:28 2025 +0700
+
+    add backend
+
+[33mcommit 53b5bd88db83698490b067afe57b0bea69cb7329[m
+Author: punnawit <punnawitsukhumvada@gmail.com>
+Date:   Sun Feb 9 23:24:41 2025 +0700
+
+    delete
+
+[33mcommit a2c5f1e1e0913682d425881095a5fefedfdadba9[m
+Merge: d2e31eb ff497be
+Author: Punnawit Sukhumvada <punnawitskv@gmail.com>
+Date:   Sun Feb 9 23:23:05 2025 +0700
+
+    Merge pull request #11 from Parukoko:Valentine
+    
+    s
+
+[33mcommit ff497be0a4cabf1e98504b9c8cd7a971a62db151[m
+Author: punnawit <punnawitsukhumvada@gmail.com>
+Date:   Sun Feb 9 23:19:06 2025 +0700
+
+    s
+
+[33mcommit 90f59070e780d09e868053a81b54a370a0c74f1b[m
+Merge: 5787ea9 d2e31eb
+Author: Punnawit Sukhumvada <punnawitskv@gmail.com>
+Date:   Sun Feb 9 23:17:02 2025 +0700
+
+    Merge pull request #10 from Parukoko:main
+    
+    Mainนะ
+
+[33mcommit d2e31eb63db3c541bdd25f5ae523c0b67225bf3c[m
+Merge: 5787ea9 b6ec284
+Author: Thanatchaya Toom-ariya <102163404+Parukoko@users.noreply.github.com>
+Date:   Sun Feb 9 23:12:23 2025 +0700
+
+    Merge pull request #9 from Parukoko:Mook
+    
+    add file
+
+[33mcommit b6ec2848936f18d48054740d4cca444812844e5f[m[33m ([m[1;31morigin/Mook[m[33m)[m
+Author: unknown <thanatchayamook@gmail.com>
+Date:   Sun Feb 9 23:11:05 2025 +0700
+
+    add file
+
+[33mcommit cf041771b126161920b1bbee177ab5f8d2384898[m
+Merge: bf2ea55 5787ea9
+Author: unknown <thanatchayamook@gmail.com>
+Date:   Sun Feb 9 23:06:51 2025 +0700
+
+    Merge branch 'main' of https://github.com/Parukoko/HikeHub
+
+[33mcommit 5787ea92ab6d201197673e9271be3ed987f73c03[m
+Merge: 4d99d83 535093c
+Author: Punnawit Sukhumvada <punnawitskv@gmail.com>
+Date:   Sun Feb 9 23:06:01 2025 +0700
+
+    Merge pull request #8 from Parukoko:Mook
+    
+    edit file
+
+[33mcommit 535093c7ddc5ee1a733dc609a2a06846f4d366eb[m
+Author: unknown <thanatchayamook@gmail.com>
+Date:   Sun Feb 9 22:58:53 2025 +0700
+
+    edit file
+
+[33mcommit 4d99d83438fa8c1938adfe877cf5d9807ee029f6[m
+Merge: 494621f 5847a74
+Author: Thanatchaya Toom-ariya <102163404+Parukoko@users.noreply.github.com>
+Date:   Sun Feb 9 22:57:00 2025 +0700
+
+    Merge pull request #7 from Parukoko/Mook
+    
+    edit test1
+
+[33mcommit 5847a74c4f5a3caf59efe9bcb32420f3533f5949[m
+Author: unknown <thanatchayamook@gmail.com>
+Date:   Sun Feb 9 22:56:19 2025 +0700
+
+    edit test1
+
+[33mcommit 494621f0949e90d864886fb909c2141c81e85fa0[m
+Merge: 398d09f 61bd031
+Author: Punnawit Sukhumvada <punnawitskv@gmail.com>
+Date:   Sun Feb 9 22:55:11 2025 +0700
+
+    Merge pull request #6 from Parukoko:Valentine
+    
+    Main
+
+[33mcommit 61bd031065074af1eb304e29096b8fe229f94768[m
+Author: punnawit <punnawitsukhumvada@gmail.com>
+Date:   Sun Feb 9 22:54:18 2025 +0700
+
+    testmerge2
+
+[33mcommit bf2ea55d132d66635e93f8ee044746f5fd824500[m
+Merge: 36777f1 398d09f
+Author: unknown <thanatchayamook@gmail.com>
+Date:   Sun Feb 9 22:51:35 2025 +0700
+
+    Merge branch 'main' of https://github.com/Parukoko/HikeHub
+
+[33mcommit 398d09f95725a8209e14943f655282f0c6c5c4a9[m
+Merge: 1db642f 4fa2cdf
+Author: Thanatchaya Toom-ariya <102163404+Parukoko@users.noreply.github.com>
+Date:   Sun Feb 9 22:50:55 2025 +0700
+
+    Merge pull request #5 from Parukoko/Mook
+    
+    add tst1.txt
+
+[33mcommit 1db642f2f12e4ec40560475bf9d291dccb762bbe[m
+Merge: 78c1297 36ff075
+Author: Punnawit Sukhumvada <punnawitskv@gmail.com>
+Date:   Sun Feb 9 22:49:17 2025 +0700
+
+    Merge pull request #4 from Parukoko/Valentine
+    
+    Valentinetest232
+
+[33mcommit 4fa2cdfd43a993b9571e73dc30919d0d8bec7ed4[m
+Author: unknown <thanatchayamook@gmail.com>
+Date:   Sun Feb 9 22:48:34 2025 +0700
+
+    add tst1.txt
+
+[33mcommit 36777f1ceeeae6fce5bb2f8d67b39a7dac3b7a5f[m
+Merge: 2af043b 54c220c
+Author: unknown <thanatchayamook@gmail.com>
+Date:   Sun Feb 9 22:41:19 2025 +0700
+
+    Merge branch 'main' of https://github.com/Parukoko/HikeHub
+
+[33mcommit 78c12971a63194a146358d1ace9dbf95da089efb[m
+Author: punnawit <punnawitsukhumvada@gmail.com>
+Date:   Sun Feb 9 22:38:54 2025 +0700
+
+    badgit
+
+[33mcommit 2af043bbd1f396ae1027ffd7fbc40138f704746f[m
+Author: unknown <thanatchayamook@gmail.com>
+Date:   Sun Feb 9 22:38:25 2025 +0700
+
+    Save progress before switching branches
+
+[33mcommit 36ff0750a77e3ee93307f8912201b8dde06bed74[m
+Merge: 9aef9fc 54c220c
+Author: punnawit <punnawitsukhumvada@gmail.com>
+Date:   Sun Feb 9 22:34:42 2025 +0700
+
+    Merge remote-tracking branch 'origin/main' into Valentine
+
+[33mcommit 9aef9fc2a6a03ea1020a6e3a0ba30c06c86cf8a8[m
+Author: punnawit <punnawitsukhumvada@gmail.com>
+Date:   Sun Feb 9 22:33:30 2025 +0700
+
+    แก้ไฟล์
+
+[33mcommit f337fcd9a8b3d98f2b40eebc6e8a56aac430af6b[m
+Author: punnawit <punnawitsukhumvada@gmail.com>
+Date:   Sun Feb 9 22:29:39 2025 +0700
+
+    test222
+
+[33mcommit 54c220ca9ebdc915018058d0aa7b0f74aa467c6c[m
+Merge: 67ad0f9 21b028d
+Author: Punnawit Sukhumvada <punnawitskv@gmail.com>
+Date:   Sun Feb 9 22:23:57 2025 +0700
+
+    Merge pull request #3 from Parukoko/Mook
+    
+    add app.cs
+
+[33mcommit fe83625c500354444801cead6c0c324fd9d28a0d[m
+Author: punnawit <punnawitsukhumvada@gmail.com>
+Date:   Sun Feb 9 22:23:12 2025 +0700
+
+    test
+
+[33mcommit 67ad0f930395ec862a697b707df1e830ab637a34[m
+Merge: 59f5191 a0032db
+Author: Punnawit Sukhumvada <punnawitskv@gmail.com>
+Date:   Sun Feb 9 22:22:15 2025 +0700
+
+    Merge pull request #2 from Parukoko/Valentine
+    
+    test
+
+[33mcommit 21b028df82f4602290fbc0e6b89774dea5c6973e[m
+Author: unknown <thanatchayamook@gmail.com>
+Date:   Sun Feb 9 22:16:04 2025 +0700
+
+    add app.cs
+
+[33mcommit a0032dbb277793c4a76165e5631e940e1875ea8f[m
+Author: punnawit <punnawitsukhumvada@gmail.com>
+Date:   Sun Feb 9 22:06:15 2025 +0700
+
+    test
+
+[33mcommit 59f5191ae7930244b23b0b1c4fe4706118152bc8[m
+Merge: 7b6e426 2826c44
+Author: Thanatchaya To
