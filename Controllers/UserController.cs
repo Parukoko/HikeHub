@@ -25,7 +25,7 @@ namespace HikeHub.Controllers
                 LastName = "Sukhumvada",
                 Birthdate = new DateTime(2005, 2, 14),
                 Sex = "Male",
-                Tel = 123456789,
+                TelNo = "123456789",
                 IdLine = "valentine123",
                 Bio = "I love hiking",
                 Image = "profile1.jpg"
@@ -39,7 +39,7 @@ namespace HikeHub.Controllers
                 LastName = "Chuasiriporn",
                 Birthdate = new DateTime(2005, 12, 10),
                 Sex = "Female",
-                Tel = 987654321,
+                TelNo = "987654321",
                 IdLine = "carrot123",
                 Bio = "I love traveling",
                 Image = "profile2.jpg"
@@ -53,7 +53,7 @@ namespace HikeHub.Controllers
                 LastName = "Chuasiriporn",
                 Birthdate = new DateTime(2005, 12, 10),
                 Sex = "Female",
-                Tel = 123123123,
+                TelNo = "123123123",
                 IdLine = "candy123",
                 Bio = "I love cooking",
                 Image = "profile3.jpg"
@@ -63,6 +63,36 @@ namespace HikeHub.Controllers
         public UserController(HikeHubDbContext context)
         {
             _context = context;
+        }
+
+        [HttpGet("all")]
+        public IActionResult GetAllUsers()
+        {
+            var userDtos = Users.Select(user => new UserDto
+            {
+                UserID = user.UserID,
+                UserName = user.UserName,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Birthdate = user.Birthdate,
+                Sex = user.Sex,
+                TelNo = user.TelNo,
+                IdLine = user.IdLine,
+                Bio = user.Bio,
+                Image = user.Image,
+                FollowedList = user.FollowList.Select(followId => new FollowInfo
+                {
+                    UserID = followId,
+                    UserName = Users.FirstOrDefault(u => u.UserID == followId)?.UserName ?? string.Empty
+                }).ToList(),
+                FollowerList = user.FollowerList.Select(followerId => new FollowInfo
+                {
+                    UserID = followerId,
+                    UserName = Users.FirstOrDefault(u => u.UserID == followerId)?.UserName ?? string.Empty
+                }).ToList()
+            }).ToList();
+
+            return Ok(userDtos);
         }
 
         [HttpGet("{id}")]
@@ -85,7 +115,7 @@ namespace HikeHub.Controllers
                 LastName = user.LastName,
                 Birthdate = user.Birthdate,
                 Sex = user.Sex,
-                Tel = user.Tel,
+                TelNo = user.TelNo,
                 IdLine = user.IdLine,
                 Bio = user.Bio,
                 Image = user.Image,
@@ -102,36 +132,6 @@ namespace HikeHub.Controllers
             };
 
             return Ok(userDto);
-        }
-
-        [HttpGet("all")]
-        public IActionResult GetAllUsers()
-        {
-            var userDtos = Users.Select(user => new UserDto
-            {
-                UserID = user.UserID,
-                UserName = user.UserName,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Birthdate = user.Birthdate,
-                Sex = user.Sex,
-                Tel = user.Tel,
-                IdLine = user.IdLine,
-                Bio = user.Bio,
-                Image = user.Image,
-                FollowedList = user.FollowList.Select(followId => new FollowInfo
-                {
-                    UserID = followId,
-                    UserName = Users.FirstOrDefault(u => u.UserID == followId)?.UserName ?? string.Empty
-                }).ToList(),
-                FollowerList = user.FollowerList.Select(followerId => new FollowInfo
-                {
-                    UserID = followerId,
-                    UserName = Users.FirstOrDefault(u => u.UserID == followerId)?.UserName ?? string.Empty
-                }).ToList()
-            }).ToList();
-
-            return Ok(userDtos);
         }
 
         [HttpPost("register")]
@@ -188,7 +188,7 @@ namespace HikeHub.Controllers
                 LastName = lastname,
                 Birthdate = birthdate,
                 Sex = sex,
-                Tel = null,
+                TelNo = null,
                 IdLine = null,
                 Bio = null,
                 Image = null
@@ -216,25 +216,6 @@ namespace HikeHub.Controllers
             return Ok("User logged out successfully.");
         }
 
-        [HttpPut("updateProfile")]
-        public IActionResult UpdateProfile([FromBody] User updatedUser)
-        {
-            var user = Users.FirstOrDefault(u => u.UserID == updatedUser.UserID);
-            if (user == null)
-            {
-                return NotFound("User not found.");
-            }
-
-            user.FirstName = updatedUser.FirstName;
-            user.LastName = updatedUser.LastName;
-            user.Birthdate = updatedUser.Birthdate;
-            user.Bio = updatedUser.Bio;
-            user.Sex = updatedUser.Sex;
-            user.ProfilePicture = updatedUser.ProfilePicture;
-
-            return Ok("User profile updated successfully.");
-        }
-
         [HttpPost("followUser")]
         public IActionResult FollowUser(int userId, int followUserId)
         {
@@ -255,6 +236,82 @@ namespace HikeHub.Controllers
             followUser.FollowerList.Add(userId);
 
             return Ok("User followed successfully.");
+        }
+
+        [HttpPut("updateProfile")]
+        public IActionResult UpdateProfile(int userID, string? newUsername, string? newFirstname, string? newLastname, DateTime? newBirthdate, string? newSex, string? newTelNo, string? newLineID, string? newBio, string? newImage)
+        {
+            var user = Users.FirstOrDefault(u => u.UserID == userID);
+            if (user == null)
+            {
+                return NotFound("User not found.");
+            }
+
+            // Validate new values
+            if (!string.IsNullOrEmpty(newUsername))
+            {
+                newUsername = newUsername.ToLower();
+                if (!Regex.IsMatch(newUsername, @"^[a-z0-9]+$"))
+                {
+                    return BadRequest("Username must contain only lowercase letters and numbers.");
+                }
+                user.UserName = newUsername;
+            }
+            if (!string.IsNullOrEmpty(newFirstname))
+            {
+                if (!Regex.IsMatch(newFirstname, @"^[a-zA-Z]+$"))
+                {
+                    return BadRequest("Firstname must contain only letters.");
+                }
+                user.FirstName = char.ToUpper(newFirstname[0]) + newFirstname.Substring(1).ToLower();
+            }
+            if (!string.IsNullOrEmpty(newLastname))
+            {
+                if (!Regex.IsMatch(newLastname, @"^[a-zA-Z]+$"))
+                {
+                    return BadRequest("Lastname must contain only letters.");
+                }
+                user.LastName = char.ToUpper(newLastname[0]) + newLastname.Substring(1).ToLower();
+            }
+            if (newBirthdate.HasValue)
+            {
+                user.Birthdate = newBirthdate.Value;
+            }
+            if (!string.IsNullOrEmpty(newSex))
+            {
+                newSex = newSex.ToLower() switch
+                {
+                    "male" => "Male",
+                    "female" => "Female",
+                    "m" => "Male",
+                    "f" => "Female",
+                    _ => newSex
+                };
+
+                if (newSex != "Male" && newSex != "Female")
+                {
+                    return BadRequest("Sex must be either 'Male' or 'Female'.");
+                }
+                user.Sex = newSex;
+            }
+            if (!string.IsNullOrEmpty(newTelNo))
+            {
+                user.TelNo = newTelNo;
+            }
+            if (!string.IsNullOrEmpty(newLineID))
+            {
+                user.IdLine = newLineID;
+            }
+            if (!string.IsNullOrEmpty(newBio))
+            {
+                user.Bio = newBio;
+            }
+            if (!string.IsNullOrEmpty(newImage))
+            {
+                user.Image = newImage;
+            }
+
+            return Ok("User profile updated successfully.");
         }
     }
 }

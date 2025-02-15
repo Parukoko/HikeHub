@@ -29,7 +29,7 @@ namespace HikeHub.Models
         [RegularExpression("Male|Female", ErrorMessage = "Sex must be either 'Male' or 'Female'")]
         public string Sex { get; set; } = string.Empty;
 
-        public int? Tel { get; set; }
+        public string? TelNo { get; set; }
         public string? IdLine { get; set; }
         public string? Bio { get; set; }
         public string? Image { get; set; }

@@ -8,7 +8,7 @@ namespace HikeHub.Models
         public string? LastName { get; set; }
         public DateTime? Birthdate { get; set; }
         public string? Sex { get; set; }
-        public int? Tel { get; set; }
+        public string? TelNo { get; set; }
         public string? IdLine { get; set; }
         public string? Bio { get; set; }
         public string? Image { get; set; }
