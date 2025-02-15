@@ -238,6 +238,28 @@ namespace HikeHub.Controllers
             return Ok("User followed successfully.");
         }
 
+        [HttpPost("unfollowUser")]
+        public IActionResult UnfollowUser(int userId, int unfollowUserId)
+        {
+            var user = Users.FirstOrDefault(u => u.UserID == userId);
+            var unfollowUser = Users.FirstOrDefault(u => u.UserID == unfollowUserId);
+
+            if (user == null || unfollowUser == null)
+            {
+                return NotFound("User not found.");
+            }
+
+            if (!user.FollowList.Contains(unfollowUserId))
+            {
+                return BadRequest("Not following this user.");
+            }
+
+            user.FollowList.Remove(unfollowUserId);
+            unfollowUser.FollowerList.Remove(userId);
+
+            return Ok("User unfollowed successfully.");
+        }
+
         [HttpPut("updateProfile")]
         public IActionResult UpdateProfile(int userID, string? newUsername, string? newFirstname, string? newLastname, DateTime? newBirthdate, string? newSex, string? newTelNo, string? newLineID, string? newBio, string? newImage)
         {
